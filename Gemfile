@@ -7,7 +7,7 @@ gem 'require_all'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'sqlite3'
-get 'rack-contrib'
+gem 'rack-contrib'
 
 group :development do
     gem 'rerun'
