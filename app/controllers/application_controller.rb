@@ -14,8 +14,8 @@ class ApplicationController < Sinatra::Base
 
   post '/entries' do
     new_entry = Entry.create(
-      no_of_rooms = params[:no_of_rooms], rent_price = params[:rent_price],
-      listing_id = params[:listing_id], location_id = params[:location_id]
+      name = params[:name], no_of_rooms = params[:no_of_rooms], rent_price = params[:rent_price],
+      contact = params[:contact], listing_id = params[:listing_id], location_id = params[:location_id]
     )
     new_entry.to_json
   end
@@ -23,8 +23,8 @@ class ApplicationController < Sinatra::Base
   patch '/entries/:id' do
     update_entry = Entry.find(params[:id])
     update_entry.update(
-      no_of_rooms = params[:no_of_rooms], rent_price = params[:rent_price],
-      listing_id = params[:listing_id], location_id = params[:location_id]
+      name = params[:name], no_of_rooms = params[:no_of_rooms], rent_price = params[:rent_price],
+      contact = params[:contact], listing_id = params[:listing_id], location_id = params[:location_id]
     )
     update_entry.to_json
   end
