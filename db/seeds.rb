@@ -8,6 +8,7 @@ location3 = Location.create(name: "Kisumu")
 location4 = Location.create(name: "Nairobi")
 location5 = Location.create(name: "Diani")
 location6 = Location.create(name: "Syokimau")
+location7 = Location.create(name: "Mombasa")
 
 
 
@@ -56,6 +57,15 @@ entry34 = Entry.create(name: "Kibennoh Apartments", no_of_rooms: 3, rent_price: 
 entry35 = Entry.create(name: "Kaki Estate", no_of_rooms: 4, rent_price: 150,000, contact: 0709876543, listing_id: 3, location_id: 6)
 entry36 = Entry.create(name: "Kaki Estate", no_of_rooms: 5, rent_price: 200,000, contact: 0709876543, listing_id: 3, location_id: 6)
 entry37 = Entry.create(name: "Qwetu Hostel", no_of_rooms: 1, rent_price: 15,000, contact: 0723456654, listing_id: 4, location_id: 6)
+entry38 = Entry.create(name: "Annex Plaza", no_of_rooms: 3, rent_price: 60,000, contact: 0722000000, listing_id: 1, location_id: 7)
+entry39 = Entry.create(name: "Annex Plaza", no_of_rooms: 4, rent_price: 85,000, contact: 0722000000, listing_id: 1, location_id: 7)
+entry40 = Entry.create(name: "Golden Reach", no_of_rooms: 1, rent_price: 15,000, contact: 0723567890, listing_id: 2, location_id: 7)
+entry41 = Entry.create(name: "Golden Reach", no_of_rooms: 2, rent_price: 23,000, contact: 0723567890, listing_id: 2, location_id: 7)
+entry42 = Entry.create(name: "Hilton", no_of_rooms: 4, rent_price: 78,000, contact: 0723456789, listing_id: 3, location_id: 7)
+entry43 = Entry.create(name: "Hilton", no_of_rooms: 5, rent_price: 80,000, contact: 0723456789, listing_id: 3, location_id: 7)
+entry44 = Entry.create(name: "Godown Hostel", no_of_rooms: 1, rent_price: 10,000, contact: 0712345678, listing_id: 4, location_id: 7)
+
+
 
 
 
