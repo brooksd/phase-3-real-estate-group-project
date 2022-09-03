@@ -47,4 +47,44 @@ class ApplicationController < Sinatra::Base
     )
     new_location.to_json
   end
+
+  patch '/locations/:id' do
+    update_location = Location.find(params[:id])
+    update_location.update(
+      name: params[:name]
+    )
+    update_location.to_json
+  end
+
+  delete '/locations/:id' do
+    delete_location = Location.find(params[:id])
+    delete_location.destroy
+    delete_location.to_json
+  end
+  
+
+  #Listings Routes
+  get '/listings' do
+    get_listings = Listing.all.order(:asc)
+    get_listings.to_json
+  end
+
+  delete '/listings/:id' do
+    delete_listing = Listing.find(params[:id])
+    delete_listing.destroy
+    delete_listing.to_json
+  end
+
+  # post '/listings' do
+  #   new_listings = Listing.create(
+
+  #   )
+  #   new_listings.to_json
+  # end
+
+#    t.string "apartment"
+#     t.string "mansion"
+#     t.string "bungalow"
+#     t.string "hostels"
+#     t.integer "location_id"
 end
