@@ -12,6 +12,11 @@ class ApplicationController < Sinatra::Base
     entries.to_json
   end
 
+  get '/entries/:id' do
+    entries = Entry.find(params[:id])
+    entries.to_json
+  end
+
   post '/entries' do
     new_entry = Entry.create(
       name = params[:name], no_of_rooms = params[:no_of_rooms], rent_price = params[:rent_price],
@@ -41,6 +46,11 @@ class ApplicationController < Sinatra::Base
     get_location.to_json
   end
 
+  get '/locations/:id' do
+    get_location = Location.find(params[:id])
+    get_location.to_json
+  end
+
   post '/locations' do
     new_location = Location.create(
       name: params[:name]
@@ -66,6 +76,11 @@ class ApplicationController < Sinatra::Base
   #Listings Routes
   get '/listings' do
     get_listings = Listing.all.order(:asc)
+    get_listings.to_json
+  end
+
+   get '/listings/:id' do
+    get_listings = Listing.find(params[:id])
     get_listings.to_json
   end
 
