@@ -97,9 +97,36 @@ class ApplicationController < Sinatra::Base
   #   new_listings.to_json
   # end
 
-#    t.string "apartment"
-#     t.string "mansion"
-#     t.string "bungalow"
-#     t.string "hostels"
-#     t.integer "location_id"
+  #Review Routes
+  get '/reviews' do
+    get_review = Review.all.order(:asc)
+    get_review.to_json
+  end
+
+  get '/reviews/:id' do
+    get_review = Review.find(params[:id])
+    get_review.to_json
+  end
+
+  post '/reviews' do 
+    new_review = Review.create(
+      name = params[:name], review = params[:review]
+    )
+    new_review.to_json
+  end
+
+  patch '/reviews/:id' do
+    update_review = Review.find(params[:id])
+    update_review.update(
+      name = params[:name], review = params[:review]
+    )
+    update_review.to_json
+  end
+ 
+  delete '/reviews/:id' do
+    delete_review = Review.find(params[:id])
+    delete_review.destroy
+    delete_review.to_json
+  end
+
 end

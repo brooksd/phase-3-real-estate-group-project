@@ -18,6 +18,11 @@ listing2 = Listing.create(name: "Apartment")
 listing3 = Listing.create(name: "Mansion")
 listing4 = Listing.create(name: "Hostel")
 
+#Seed for reviews 
+5.times do 
+    Review.create(name: Faker::Name.name, review: Faker::Lorem.sentence(word_count: 3, supplemental: false, random_words_to_add: 4) )
+end
+
 
 #seed for entries
 entry1 = Entry.create(name:"Youlow", no_of_rooms: 5, rent_price: 1500000, contact: 707072567, listing_id: 1, location_id: 1)
