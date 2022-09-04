@@ -19,8 +19,8 @@ class ApplicationController < Sinatra::Base
 
   post '/entries' do
     new_entry = Entry.create(
-      name = params[:name], no_of_rooms = params[:no_of_rooms], rent_price = params[:rent_price],
-      contact = params[:contact], listing_id = params[:listing_id], location_id = params[:location_id]
+      name: params[:name], no_of_rooms: params[:no_of_rooms], rent_price: params[:rent_price],
+      contact: params[:contact], listing_id: params[:listing_id], location_id: params[:location_id]
     )
     new_entry.to_json
   end
@@ -28,8 +28,8 @@ class ApplicationController < Sinatra::Base
   patch '/entries/:id' do
     update_entry = Entry.find(params[:id])
     update_entry.update(
-      name = params[:name], no_of_rooms = params[:no_of_rooms], rent_price = params[:rent_price],
-      contact = params[:contact], listing_id = params[:listing_id], location_id = params[:location_id]
+      name: params[:name], no_of_rooms: params[:no_of_rooms], rent_price: params[:rent_price],
+      contact: params[:contact], listing_id: params[:listing_id], location_id: params[:location_id]
     )
     update_entry.to_json
   end
@@ -104,13 +104,13 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/reviews/:id' do
-    get_review = Review.find(params[:id])
-    get_review.to_json
+    get_review_1 = Review.find(params[:id])
+    get_review_1.to_json
   end
 
   post '/reviews' do 
     new_review = Review.create(
-      name = params[:name], review = params[:review]
+      name: params[:name], review: params[:review]
     )
     new_review.to_json
   end
@@ -118,7 +118,7 @@ class ApplicationController < Sinatra::Base
   patch '/reviews/:id' do
     update_review = Review.find(params[:id])
     update_review.update(
-      name = params[:name], review = params[:review]
+      name: params[:name], review: params[:review]
     )
     update_review.to_json
   end
