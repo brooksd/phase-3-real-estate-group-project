@@ -37,7 +37,7 @@ class ApplicationController < Sinatra::Base
   delete '/entries/:id' do
     delete_entry = Entry.find(params[:id])
     delete_entry.destroy
-    delete_entry.json
+    delete_entry.to_json
   end
 
   #Location Routes
